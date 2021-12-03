@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_03_015433) do
+ActiveRecord::Schema.define(version: 2021_12_03_020134) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2021_12_03_015433) do
     t.index ["service_technician_id"], name: "index_orders_on_service_technician_id"
     t.index ["tip_id"], name: "index_orders_on_tip_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.integer "rating"
+    t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_reviews_on_order_id"
   end
 
   create_table "services", force: :cascade do |t|
@@ -92,6 +101,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_015433) do
   add_foreign_key "orders", "services_technicians", column: "service_technician_id"
   add_foreign_key "orders", "tips"
   add_foreign_key "orders", "users"
+  add_foreign_key "reviews", "orders"
   add_foreign_key "services", "categories"
   add_foreign_key "services", "users", column: "technician_id_id"
   add_foreign_key "services_technicians", "services"

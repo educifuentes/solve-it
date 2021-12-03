@@ -1,0 +1,2 @@
+class CancelledFeedback < ApplicationRecord
+end

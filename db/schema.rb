@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_03_020308) do
+ActiveRecord::Schema.define(version: 2021_12_04_202332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_020308) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "icon"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -64,11 +65,12 @@ ActiveRecord::Schema.define(version: 2021_12_03_020308) do
   create_table "services", force: :cascade do |t|
     t.bigint "category_id", null: false
     t.string "description"
-    t.bigint "technician_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "technician_id"
+    t.string "name"
     t.index ["category_id"], name: "index_services_on_category_id"
-    t.index ["technician_id_id"], name: "index_services_on_technician_id_id"
+    t.index ["technician_id"], name: "index_services_on_technician_id"
   end
 
   create_table "services_technicians", force: :cascade do |t|
@@ -112,7 +114,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_020308) do
   add_foreign_key "payment_methods", "users"
   add_foreign_key "reviews", "orders"
   add_foreign_key "services", "categories"
-  add_foreign_key "services", "users", column: "technician_id_id"
+  add_foreign_key "services", "users", column: "technician_id"
   add_foreign_key "services_technicians", "services"
   add_foreign_key "services_technicians", "users"
 end

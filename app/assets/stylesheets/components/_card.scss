@@ -1,0 +1,22 @@
+.card-home {
+  border: 2px lightgrey (255, 213, 63);
+  width: 100%;
+  box-shadow: 0px 2px 6px 0px rgb(209, 209, 209);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 4em;
+  margin: 1em;
+}
+
+section-browse > h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+// #search-bar {
+//   width: 100%;
+// }
+
+section-browse .text {
+  text-decoration: none;
+}

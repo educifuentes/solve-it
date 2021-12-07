@@ -1,2 +1,55 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<%# Search bar %>
+<div class="container">
+
+    <div class="d-flex my-4" id="search-bar">
+
+      <div class="flex-grow-1">
+        <%= form_tag root_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "I need help with..."
+        %>
+      </div>
+
+      <div class="flex-item">
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      </div>
+        <% end %>
+
+  </div>
+
+
+<section-browse>
+  <h2>I have a problem with</h2>
+
+
+    <div class="row">
+  <% @categories.each do |category| %>
+      <div class="col-sm d-flex col flex-column align-items-center card-home">
+        <i class="<%= category.icon %> icon-home" ></i>
+        <%= link_to root_path do %>
+            <h3> <%= category.name %></h3>
+
+        <% end %>
+      </div>
+  <% end %>
+       <div class="col-sm d-flex col flex-column align-items-center card-home">
+        <i class="fas fa-plus-circle icon-home"></i>
+        <%= link_to root_path do %>
+          <h3> More</h3>
+        <% end %>
+
+      </div>
+
+      </div>
+
+  </section-browse>
+
+
+
+
+
+
+</div>

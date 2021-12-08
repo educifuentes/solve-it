@@ -20,12 +20,7 @@
   display: flex;
 }
 
-#name {
-  font-size: 39px;
-  color: $white;
 
-  font-weight: bolder;
-}
 
 .container {
   width: 80%;
@@ -34,25 +29,28 @@
 }
 
 .navbar a {
-  color: $a-light-gray;
+  color: $c-white;
   text-decoration: none;
   display: inline-block;
   font-family: $navbar-a;
   font-size: 18px;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
   &:hover {
-    color: $a-white;
+     color: $c-yellow;
     transition: 0.2s ease-in-out;
   }
 }
 
 #logo {
-  color: $a-white;
-  font-size: 35px;
+  color: $c-yellow;
+  font-size: 25px;
 }
 
 #main-name {
   color: $a-white;
-  font-size: 30px;
-  font-family: "Josefin Sans", sans-serif;
+  font-size: 28px;
+font-family: 'Jura', sans-serif;
+font-weight: 700;
+padding-bottom: 3px;
+
 }

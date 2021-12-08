@@ -1,0 +1,12 @@
+<h4>Add a service</h4>
+
+<%= simple_form_for @service do |f| %>
+  <%= f.association :service, label_method: :label_text, include_blank: false, collection: Service.all.sort_by {|item| item.label_text}  %>
+  <%= f.input :fee_amount , placeholder: "Set your fee" %>
+  <%= f.button :submit %>
+
+
+<% end %>
+
+
+<%# # Service.order(name: :asc) %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_04_192708) do
+ActiveRecord::Schema.define(version: 2021_12_04_215803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,9 +67,8 @@ ActiveRecord::Schema.define(version: 2021_12_04_192708) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "technician_id"
+    t.string "name"
     t.index ["category_id"], name: "index_services_on_category_id"
-    t.index ["technician_id"], name: "index_services_on_technician_id"
   end
 
   create_table "services_technicians", force: :cascade do |t|
@@ -113,7 +112,6 @@ ActiveRecord::Schema.define(version: 2021_12_04_192708) do
   add_foreign_key "payment_methods", "users"
   add_foreign_key "reviews", "orders"
   add_foreign_key "services", "categories"
-  add_foreign_key "services", "users", column: "technician_id"
   add_foreign_key "services_technicians", "services"
   add_foreign_key "services_technicians", "users"
 end

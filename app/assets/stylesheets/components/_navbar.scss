@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  background: rgb(17, 17, 17);
+  background: $c-dark-blue;
   padding: 0px 0;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
   height: 8vh;
@@ -34,25 +34,25 @@
 }
 
 .navbar a {
-  color: $si-light-gray;
+  color: $a-light-gray;
   text-decoration: none;
   display: inline-block;
   font-family: $navbar-a;
   font-size: 18px;
   transition: 0.3s ease-in-out;
   &:hover {
-    color: $si-white;
-    transition: 0.3s ease-in-out;
+    color: $a-white;
+    transition: 0.2s ease-in-out;
   }
 }
 
 #logo {
-  color: $si-white;
+  color: $a-white;
   font-size: 35px;
 }
 
 #main-name {
-  color: $si-white;
+  color: $a-white;
   font-size: 30px;
   font-family: "Josefin Sans", sans-serif;
 }

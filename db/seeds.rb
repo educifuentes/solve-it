@@ -82,22 +82,22 @@ service.category = category
 service.save!
 
 # Services Technician
-services_technician = ServicesTechnician.new(fee_amount: 10, fee_currency: "USD")
+services_technician = ServicesTechnician.new(price: rand(5..10))
 services_technician.service = Service.third
 services_technician.user = User.where(role: "technician").third
 services_technician.save!
 
-services_technician_two = ServicesTechnician.new(fee_amount: 12, fee_currency: "USD")
+services_technician_two = ServicesTechnician.new(price_cents: rand(500..1000))
 services_technician_two.service = Service.second
 services_technician_two.user = User.where(role: "technician").second
 services_technician_two.save!
 
-services_technician_three = ServicesTechnician.new(fee_amount: 14, fee_currency: "USD")
+services_technician_three = ServicesTechnician.new(price_cents: rand(500..1000))
 services_technician_three.service = Service.first
 services_technician_three.user = User.where(role: "technician").first
 services_technician_three.save!
 
-services_technician_fourth = ServicesTechnician.new(fee_amount: 14, fee_currency: "USD")
+services_technician_fourth = ServicesTechnician.new(price: rand(5..10))
 services_technician_fourth.service = Service.first
 services_technician_fourth.user = User.where(role: "technician").fourth
 services_technician_fourth.save!

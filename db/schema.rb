@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_12_09_233728) do
     t.bigint "cancelled_feedback_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "amount_cents", default: 0, null: false
     t.index ["cancelled_feedback_id"], name: "index_orders_on_cancelled_feedback_id"
     t.index ["services_technician_id"], name: "index_orders_on_services_technician_id"
     t.index ["tip_id"], name: "index_orders_on_tip_id"
@@ -74,10 +75,9 @@ ActiveRecord::Schema.define(version: 2021_12_09_233728) do
   create_table "services_technicians", force: :cascade do |t|
     t.bigint "service_id", null: false
     t.bigint "user_id", null: false
-    t.float "fee_amount"
-    t.string "fee_currency"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["service_id"], name: "index_services_technicians_on_service_id"
     t.index ["user_id"], name: "index_services_technicians_on_user_id"
   end

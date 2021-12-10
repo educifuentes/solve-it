@@ -1,19 +1,24 @@
 <%# Search bar %>
 <div class="container">
-  <div class="d-flex my-4" id="search-bar">
+  <div class="d-flex mt-1" id="search-bar">
     <div class="flex-grow-1">
       <%= form_tag root_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
+          id: "search",
           placeholder: "I need help with..."
         %>
-      </div>
-      <div class="flex-item">
+    </div>
+    <div class="flex-item">
         <%= submit_tag "Search", class: "btn btn-primary" %>
-      </div>
+    </div>
     <% end %>
   </div>
+  <ul id="results" class="list-group">
+    </ul>
+
+
   <section-browse>
     <h2>I have a problem with</h2>
     <div class="row">

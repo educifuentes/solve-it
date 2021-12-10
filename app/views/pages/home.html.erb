@@ -20,7 +20,7 @@
       <% @categories.each do |category| %>
         <div class="col-sm d-flex col flex-column align-items-center card-home">
           <i class="<%= category.icon %> icon-home" ></i>
-          <%= link_to root_path do %>
+          <%= link_to category_path(category) do %>
             <h3> <%= category.name %></h3>
           <% end %>
         </div>

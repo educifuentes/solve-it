@@ -6,8 +6,8 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.timestamp :start
       t.timestamp :end
       t.string :status
-      t.references :tip, null: false, foreign_key: true
-      t.references :cancelled_feedback, null: false, foreign_key: true
+      t.references :tip, foreign_key: true
+      t.references :cancelled_feedback, foreign_key: true
 
       t.timestamps
     end

@@ -1,6 +1,8 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :service_technician
-  belongs_to :tip
-  belongs_to :cancelled_feedback
+  belongs_to :services_technician
+  belongs_to :tip, optional: true
+  belongs_to :cancelled_feedback, optional: true
+
+  has_many :reviews, dependent: :destroy
 end

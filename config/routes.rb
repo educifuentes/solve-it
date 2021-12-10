@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :services_technicians, only: %i[new create]
   resources :categories, only: %i[show index]
   resources :service, only: %i[index show]
+
+  resources :orders, only: %i[index show new create] do
+    resources :reviews, only: %i[new create]
+  end
 end

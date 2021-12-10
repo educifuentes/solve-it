@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_04_215803) do
+ActiveRecord::Schema.define(version: 2021_12_09_233728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 2021_12_04_215803) do
 
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "service_technician_id", null: false
+    t.bigint "services_technician_id", null: false
     t.datetime "start"
     t.datetime "end"
     t.string "status"
-    t.bigint "tip_id", null: false
-    t.bigint "cancelled_feedback_id", null: false
+    t.bigint "tip_id"
+    t.bigint "cancelled_feedback_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["cancelled_feedback_id"], name: "index_orders_on_cancelled_feedback_id"
-    t.index ["service_technician_id"], name: "index_orders_on_service_technician_id"
+    t.index ["services_technician_id"], name: "index_orders_on_services_technician_id"
     t.index ["tip_id"], name: "index_orders_on_tip_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -106,7 +106,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_215803) do
   end
 
   add_foreign_key "orders", "cancelled_feedbacks"
-  add_foreign_key "orders", "services_technicians", column: "service_technician_id"
+  add_foreign_key "orders", "services_technicians"
   add_foreign_key "orders", "tips"
   add_foreign_key "orders", "users"
   add_foreign_key "payment_methods", "users"

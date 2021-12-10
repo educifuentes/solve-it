@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# destroy before seeding
+if Rails.env.development?
+  Order.destroy_all
+  ServicesTechnician.destroy_all
+end
+
 # Users
 User.new(email: "edu@lewagon.com", name: "Eduardo", role: "customer", password: "123456").save
 User.new(email: "fer@lewagon.com", name: "Fernando", role: "customer", password: "123456").save
@@ -74,3 +80,61 @@ category = Category.find_by(name: "Smartphone")
 service = Service.new(name: "Connecting problem with Bluetooth, wifi, cellular networks", description: Faker::Lorem.sentence(word_count: 12))
 service.category = category
 service.save!
+
+# Services Technician
+services_technician = ServicesTechnician.new(fee_amount: 10, fee_currency: "USD")
+services_technician.service = Service.third
+services_technician.user = User.where(role: "technician").third
+services_technician.save!
+
+services_technician_two = ServicesTechnician.new(fee_amount: 12, fee_currency: "USD")
+services_technician_two.service = Service.second
+services_technician_two.user = User.where(role: "technician").second
+services_technician_two.save!
+
+services_technician_three = ServicesTechnician.new(fee_amount: 14, fee_currency: "USD")
+services_technician_three.service = Service.first
+services_technician_three.user = User.where(role: "technician").first
+services_technician_three.save!
+
+services_technician_fourth = ServicesTechnician.new(fee_amount: 14, fee_currency: "USD")
+services_technician_fourth.service = Service.first
+services_technician_fourth.user = User.where(role: "technician").fourth
+services_technician_fourth.save!
+
+# Orders
+order = Order.new(
+  start: DateTime.now - 1.hour,
+  end: DateTime.now,
+  status: "completed"
+)
+order.user = User.where(role: "customer", email: "edu@lewagon.com").first
+order.services_technician = services_technician
+order.save!
+
+order = Order.new(
+  start: DateTime.now - 1.hour,
+  end: DateTime.now,
+  status: "completed"
+)
+order.user = User.where(role: "customer", email: "fer@lewagon.com").first
+order.services_technician = services_technician_two
+order.save!
+
+order = Order.new(
+  start: DateTime.now - 1.hour,
+  end: DateTime.now,
+  status: "completed"
+)
+order.user = User.where(role: "customer", email: "manu@lewagon.com").first
+order.services_technician = services_technician_three
+order.save!
+
+order = Order.new(
+  start: DateTime.now - 1.hour,
+  end: DateTime.now,
+  status: "completed"
+)
+order.user = User.where(role: "customer", email: "julio@lewagon.com").first
+order.services_technician = services_technician_fourth
+order.save!

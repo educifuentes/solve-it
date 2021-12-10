@@ -1,0 +1,8 @@
+<h2> <%= @category.name %></h2>
+<h2><i class="<%= @category.icon %> icon-home" ></i></h2>
+
+<% @category.services.each do |service| %>
+  <ul>
+    <li><%= service.name%></li>
+  </ul>
+<% end %>

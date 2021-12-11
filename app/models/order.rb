@@ -5,4 +5,5 @@ class Order < ApplicationRecord
   belongs_to :cancelled_feedback, optional: true
 
   has_many :reviews, dependent: :destroy
+  monetize :amount_cents
 end

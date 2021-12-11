@@ -9,18 +9,14 @@
           id: "search",
           placeholder: "I need help with..."
         %>
-    </div>
-    <div class="flex-item">
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-    </div>
+      </div>
+      <div class="flex-item">
+        <%= submit_tag "Search",  class: "btn btn-primary"  %>
+      </div>
     <% end %>
   </div>
-  <ul id="results" class="list-group">
-    </ul>
-
-
   <section-browse>
-    <h2>I have a problem with</h2>
+    <h2>I have a problem with my...</h2>
     <div class="row">
       <% @categories.each do |category| %>
         <div class="col-sm d-flex col flex-column align-items-center card-home">
@@ -33,7 +29,7 @@
       <div class="col-sm d-flex col flex-column align-items-center card-home">
         <i class="fas fa-plus-circle icon-home"></i>
         <%= link_to root_path do %>
-          <h3> More</h3>
+          <h3> Other</h3>
         <% end %>
       </div>
     </div>

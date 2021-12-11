@@ -1,4 +1,9 @@
-body {
-  min-height: 92vh;
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 180px;    /* Footer height */
   padding-top: 8vh;
 }

@@ -8,6 +8,10 @@
   <li class="list-group-item">Customer:
     <%= @order.user.name %>
   </li>
+  <li class="list-group-item">Service price:
+    <%= humanized_money_with_symbol(@order.amount) %>
+  </li>
+
   <% @order.reviews.each do |review| %>
     <li class="list-group-item">Customer review:
       <%= review.comment %>

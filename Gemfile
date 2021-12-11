@@ -35,7 +35,7 @@ gem 'pg_search'
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
-gem 'money-rails', '~>1.12'
+gem 'money-rails'
 gem 'stripe'
 
 group :development, :test do  gem 'pry-byebug'

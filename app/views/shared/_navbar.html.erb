@@ -1,13 +1,13 @@
 <div class="navbar">
   <div class="d-flex align-items-center m-0">
     <i id="logo" class="fas fa-wrench"></i>
-    <h1 class="my-1 ml-1" id="main-name"> Solve It</h1>
+    <a href="/" class="my-1 ml-1" id="main-name"> Solve It</a>
   </div>
   <a id="contact" a href="/">Contact</a>
   <a id="faq" a href="/">FAQ</a>
   <a id="about" a href="/">About</a>
   <% if user_signed_in? %>
-    <a> <%= current_user.email %> </a>
+    <a id=user-email> <%= current_user.email %> </a>
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
   <% else %>
     <%= link_to "Login", new_user_session_path, class: "nav-link" %>

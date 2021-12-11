@@ -17,6 +17,10 @@ class ServicesTechniciansController < ApplicationController
     end
   end
 
+  def show
+    @service_technician = ServicesTechnician.find(params[:id])
+  end
+
   private
 
   def services_technician_params

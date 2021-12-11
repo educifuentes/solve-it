@@ -10,6 +10,9 @@
 if Rails.env.development?
   Order.destroy_all
   ServicesTechnician.destroy_all
+  User.destroy_all
+  Service.destroy_all
+  Category.destroy_all
 end
 
 # Users

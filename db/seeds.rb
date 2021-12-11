@@ -25,7 +25,6 @@ User.new(email: "rosa@lewagon.com", name: "Rosa", role: "technician", password: 
 User.new(email: "camila@lewagon.com", name: "Camila", role: "technician", password: "123456").save
 
 # Main Categories
-<<<<<<< HEAD
 Category.new(name: "Laptop", icon: "fas fa-laptop").save!
 Category.new(name: "Smartphone", icon: "fas fa-laptop").save!
 Category.new(name: "Printer", icon: "fas fa-print").save!
@@ -139,9 +138,3 @@ order = Order.new(
 order.user = User.where(role: "customer", email: "julio@lewagon.com").first
 order.services_technician = services_technician_fourth
 order.save!
-=======
-Category.new(name: "Laptop", icon: "fas fa-laptop").save
-Category.new(name: "Smartphone", icon: "fas fa-mobile-alt").save
-Category.new(name: "Printer", icon: "fas fa-print").save
-Category.new(name: "Smart TV", icon: "fas fa-tv").save
->>>>>>> 88bfa92 (Finished navbar and footer)

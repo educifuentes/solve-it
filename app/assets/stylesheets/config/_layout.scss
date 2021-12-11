@@ -1,9 +1,14 @@
 #page-container {
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
 }
 
 #content-wrap {
   padding-bottom: 180px;    /* Footer height */
   padding-top: 8vh;
+ margin: 0;
 }

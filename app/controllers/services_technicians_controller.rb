@@ -1,4 +1,7 @@
 class ServicesTechniciansController < ApplicationController
+  def index
+    @services_technicians = ServicesTechnician.all.where(service_id: params[:service_id])
+  end
 
   def new
     @service = ServicesTechnician.new
@@ -6,7 +9,6 @@ class ServicesTechniciansController < ApplicationController
   end
 
   def create
-
     @service_technician = ServicesTechnician.new(services_technician_params)
     @service_technician.user = current_user
 

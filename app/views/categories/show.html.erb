@@ -3,6 +3,6 @@
 
 <% @category.services.each do |service| %>
   <ul>
-    <li><%= service.name%></li>
+    <li><%= link_to service.name, services_technicians_path(:service_id => service.id) %></li>
   </ul>
 <% end %>

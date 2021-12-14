@@ -108,9 +108,9 @@ services_technician_fourth.save!
 # Orders
 order = Order.new(
   start: DateTime.now - 1.hour,
-  end: DateTime.now,
-  status: "completed",
-  amount_cents: services_technician.price_cents
+end: DateTime.now,
+status: "completed",
+amount_cents: services_technician.price_cents
 )
 order.user = User.where(role: "customer", email: "edu@lewagon.com").first
 order.services_technician = services_technician
@@ -118,9 +118,9 @@ order.save!
 
 order = Order.new(
   start: DateTime.now - 1.hour,
-  end: DateTime.now,
-  status: "completed",
-  amount_cents: services_technician_two.price_cents
+end: DateTime.now,
+status: "completed",
+amount_cents: services_technician_two.price_cents
 )
 order.user = User.where(role: "customer", email: "fer@lewagon.com").first
 order.services_technician = services_technician_two
@@ -128,9 +128,9 @@ order.save!
 
 order = Order.new(
   start: DateTime.now - 1.hour,
-  end: DateTime.now,
-  status: "completed",
-  amount_cents: services_technician_three.price_cents
+end: DateTime.now,
+status: "completed",
+amount_cents: services_technician_three.price_cents
 
 )
 order.user = User.where(role: "customer", email: "manu@lewagon.com").first
@@ -139,9 +139,9 @@ order.save!
 
 order = Order.new(
   start: DateTime.now - 1.hour,
-  end: DateTime.now,
-  status: "completed",
-  amount_cents: services_technician_fourth.price_cents
+end: DateTime.now,
+status: "completed",
+amount_cents: services_technician_fourth.price_cents
 )
 order.user = User.where(role: "customer", email: "julio@lewagon.com").first
 order.services_technician = services_technician_fourth

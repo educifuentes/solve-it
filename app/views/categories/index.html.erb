@@ -1,34 +1,46 @@
-<div class="container">
-  <div class="d-flex mt-1" id="search-bar">
-    <div class="flex-grow-1">
-      <%= form_tag root_path, method: :get do %>
-        <%= text_field_tag :query,
+<div class="category-container">
+  <div class="row">
+    <div class="col">
+      <h1>Pick your device </h1>
+      <%# <h2>For which device do you need tech support?</h2> %>
+      <h3>Not sure? Search all tech solutions</h3>
+      <div class="d-flex mt-1" id="search-bar">
+        <div class="flex-grow-1">
+          <%= form_tag root_path, method: :get do %>
+            <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           id: "search",
           placeholder: "I need help with..."
         %>
-      </div>
-      <div class="flex-item">
-        <%= submit_tag "Search",  class: "btn btn-primary"  %>
-      </div>
-    <% end %>
-  </div>
-  <section-browse>
-    <h2>I have a problem with my...</h2>
-    <div class="row">
-      <% @categories.each do |category| %>
-        <div class="col-sm d-flex col flex-column align-items-center card-home">
-          <i class="<%= category.icon %> icon-home" ></i>
-          <%= link_to category_path(category) do %>
-            <h3> <%= category.name %></h3>
-          <% end %>
-        </div>
-      <% end %>
-      <div class="col-sm d-flex col flex-column align-items-center other-card">
-        <i class="fas fa-plus-circle icon-home"></i>
-        <h3><%= link_to "Other", services_path%></h3>
+          </div>
+          <div class="flex-item">
+            <%= submit_tag "Search",  class: "btn btn-primary"  %>
+          </div>
+        <% end %>
       </div>
     </div>
-  </section-browse>
+    <div class="col">
+      <a href="categories/21">
+        <div class="index-card card1">
+        </div>
+      </a>
+      <a href="categories/22">
+        <div class="index-card card2">
+        </div>
+      </a>
+      <a href="categories/23">
+        <div class="index-card card3">
+        </div>
+      </a>
+      <a href="categories/24">
+        <div class="index-card card4">
+        </div>
+      </a>
+      <a href="services">
+        <div class="index-card card5">
+        </div>
+      </a>
+    </div>
+  </div>
 </div>

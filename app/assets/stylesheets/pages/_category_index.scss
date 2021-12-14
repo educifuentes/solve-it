@@ -3,47 +3,147 @@ h3 > a {
   color: $c-dark-blue;
   text-decoration: none;
   display: inline-block;
-  font-family: $navbar-a;
+  font-family: $poppins;
   margin-top: 2px;
-  font-size: 30px;
-  &:hover,
-  :visited {
-    text-decoration: none;
-    color: $c-dark-blue;
+  font-size: 20px;
+   color: white;
+
+}
+
+.category-container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(121, 30, 30, 0.4), transparent), url(b.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 0 8%;
+}
+
+.row {
+  display: flex;
+  height: 70%;
+  align-items: center;
+}
+
+.col {
+  flex-basis: 50%;
+  margin-top: 20px;
+}
+
+h1 {
+  color: white;
+  font-size: 108px;
+  font-family: $poppins;
+  font-weight: bold;
+}
+h2 {
+  color: white;
+  font-size: 26px;
+  font-family: $poppins;
+
+  font-weight: 500;
+}
+h5 {
+  color: white;
+  font-size: 15px;
+  font-family: $poppins;
+}
+
+p {
+  color: white;
+  font-size: 11px;
+  line-height: 15px;
+  font-family: $poppins;
+}
+// #back-btn{
+//   width: 180px;
+//   color: white;
+//   font-size: 12px;c
+//   padding: 12px 0;
+//   background:transparent;
+//   border: 2px solid white;
+//   outline: none;
+//   margin-top: 30px;
+//   text-decoration: none;
+//   &:hover {
+//     color: $c-yellow;
+//     transition: 0.4s ease-in-out;
+//     border: 2px solid $c-yellow;
+//   }
+// }
+
+// #back-btn a{
+// color: white;
+//   font-size: 12px;
+//   text-decoration: none;
+// }
+
+.index-card {
+  width: 230px;
+  height: 230px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  margin: 15px 15px;
+  background-image: url(2001.png);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
+  &:hover {
+    transform: translateY(-15px);
+    cursor: pointer;
   }
+}
+
+.card1 {
+  background-image: url(computer.png);
+}
+.card2 {
+  background-image: url(phone.png);
+}
+.card3 {
+  background-image: url(printer.png);
+}
+.card4 {
+  background-image: url(tv.png);
+}
+.card5 {
+  background-image: url(more.png);
 }
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
+  .index-card {
     grid-template-columns: 1fr;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .cards {
+  .index-card {
     grid-template-columns: 1fr;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .cards {
+  .index-card {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  .cards {
+  .index-card {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  .cards {
+  .index-card {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

@@ -19,15 +19,26 @@
   color: rgb(80, 80, 80);
   font-weight: bold;
   transition: transform 0.3s;
+  text-decoration: none;
   &:hover {
     transform: translateY(5px);
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
+#service-name > a {
+  color: rgb(88, 88, 88);
+  text-decoration: none;
+  &:hover {
+    color: rgb(88, 88, 88);
+  text-decoration: none;
+  }
+
+}
 .category-name {
   font-size: 10px;
-  color: black;
+  color: white;
 }
 
 #category-name {

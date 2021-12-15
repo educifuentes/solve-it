@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <h1>Pick your device </h1>
- 
+
       <h3>Not sure? Search all tech solutions</h3>
       <div class="d-flex mt-1" id="search-bar">
         <div class="flex-grow-1">
@@ -21,22 +21,12 @@
       </div>
     </div>
     <div class="col">
-      <a href="categories/21">
-        <div class="index-card card1">
-        </div>
-      </a>
-      <a href="categories/22">
-        <div class="index-card card2">
-        </div>
-      </a>
-      <a href="categories/23">
-        <div class="index-card card3">
-        </div>
-      </a>
-      <a href="categories/24">
-        <div class="index-card card4">
-        </div>
-      </a>
+      <% @categories.each do |category| %>
+        <%= link_to category_path(category.id) do %>
+          <%= content_tag(:div, "", class: ["index-card", category.name.downcase ]) %>
+        <% end %>
+      <% end %>
+
       <a href="services">
         <div class="index-card card5">
         </div>

@@ -1,10 +1,11 @@
-<div class="container">
+<div class="technician-container-show">
   <div class="text-left">
-    <div class="">
-      <h1>Service: <%= @service_technician.service.name %></h1>
+    <div class="info-tech-show">
+      <h1 id="info-title">Service: <%= @service_technician.service.name %></h1>
       <p>Description: <%= @service_technician.service.description %></p>
       <p>Technician: <%= @service_technician.user.name %></p>
       <p>Service price: <%= humanized_money_with_symbol(@service_technician.price) %></p>
+
       <%= form_tag orders_path do %>
         <%= hidden_field_tag "service_technician_id", @service_technician.id %>
         <%= submit_tag "Pay Service", class: "btn btn-primary" %>

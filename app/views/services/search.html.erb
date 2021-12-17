@@ -1,0 +1,13 @@
+<h1>Search Results</h1>
+
+<% if @services.empty? %>
+  <p>No services related where found</p>
+<% else %>
+  <h2>Services</h2>
+  <% @services.each do |service| %>
+    <li class="list-group-item">
+        <%= link_to service.name, services_technicians_path(:service_id => service.id) %>
+    </li>
+  <% end %>
+<% end %>
+<%= console %>

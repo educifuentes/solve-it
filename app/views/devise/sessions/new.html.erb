@@ -1,9 +1,8 @@
 
-<div class="container wrapper">
+<div class="container wrapper my-2">
 <div id="form-content">
 
     <div id="form-header">
-      <h3 id="name">Rent-A-Wagon</h3>
       <h4 >Welcome back! <br>Sign into your account</h4>
     </div>
 
@@ -13,15 +12,20 @@
     <%= f.input :email,
                 required: false,
                 autofocus: true,
+                label: false,
+                placeholder: "Email",
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
+                placeholder: "Password",
+                label: false,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
+  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in" , class: "form-btn"%>
   </div>
 <% end %>
 

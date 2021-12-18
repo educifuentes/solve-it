@@ -1,34 +1,42 @@
 .technician-container-index {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(121, 30, 30, 0.3), transparent), url(service_technician_index_background.webp);
   background-position: center;
   background-size: cover;
   position: relative;
-  padding: 0 8%;
+  margin: 0;
 }
 
-#service-title{
+#service-technician-index-img {
+  background-image: linear-gradient(rgba(121, 30, 30, 0.8), transparent), url(background4.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  margin-left: 0;
+  padding-bottom: 10px;
+}
+
+.info {
+  backdrop-filter: blur(50px);
+  backdrop-filter: brightness(85%);
+  padding: 20px 20px;
+  border-radius: 8px;
+}
+
+.info ul {
   color: white;
-  font-size: 70px;
-  font-family: $poppins;
-  padding-top: 20px;
-  margin-bottom: 50px;
-}
-
-.info ul{
-color: white;
   font-size: 25px;
   background-color: rgb(255, 255, 255);
   padding: 3px 20px;
   list-style-type: none;
-  border-radius: 50px;
+  border-radius: 15px;
   border: 1px solid rgb(243, 243, 243);
   font-family: $navbar-a;
   color: rgb(80, 80, 80);
   font-weight: bold;
   transition: transform 0.3s;
   text-decoration: none;
+
   &:hover {
     transform: translateY(5px);
     cursor: pointer;
@@ -36,6 +44,21 @@ color: white;
   }
 }
 
-.info li{
+.info li {
   padding-left: 10px;
+}
+
+.headers {
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+#service-title {
+  color: white;
+  font-size: 70px;
+  font-family: $poppins;
+  margin-bottom: 50px;
+  padding-top: 80px
 }

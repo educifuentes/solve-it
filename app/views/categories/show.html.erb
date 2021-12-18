@@ -1,15 +1,17 @@
 <div class="category-container-show">
-  <div class="services-container">
-    <br>
-    <h2 id="category-name"><%= @category.name %>s  <i id="category-icon" class="<%= @category.icon %>  icon-home" ></i></h2>
-    <h2>What problem are you having?</h2>
-    <br>
-    <div class="service">
+  <div id="category-show-img">
+    <div class="headers">
+      <h2 id="category-name"><%= @category.name %>s  </h2>
+      <h2>What problem are you having?</h2>
+    </div>
+    <div class="services">
       <% @category.services.each do |service| %>
-      <ul class="service-ul">
-        <li id="service-name"><%= link_to service.name, services_technicians_path(:service_id => service.id) %></li>
-      </ul>
-    <% end %>
+        <ul class="service-ul">
+          <%= link_to services_technicians_path(:service_id => service.id) do %>
+            <li id="service-name"><%= service.name %></li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>

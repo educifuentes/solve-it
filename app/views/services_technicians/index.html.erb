@@ -1,19 +1,23 @@
 <div class="technician-container-index">
-  <div class="index">
-    <% if @services_technicians.first.present? %>
-      <h1 id="service-title"><%= @services_technicians.first.service.name %></h1>
-    <% else %>
-      <p>No Technicians available for this service yet
-      </p>
-      <%= link_to "Back", request.referer.present? ? request.referer : default_path %>
-    <% end %>
-    <% @services_technicians.each do |service_technician| %>
+  <div id="service-technician-index-img">
+    <div class="index">
+      <div class="headers">
+        <% if @services_technicians.first.present? %>
+          <h1 id="service-title"><%= @services_technicians.first.service.name %></h1>
+        <% else %>
+          <p>No Technicians available for this service yet
+          </p>
+          <%= link_to "Back", request.referer.present? ? request.referer : default_path %>
+        <% end %>
+      </div>
       <div class="info">
-        <ul>
-          <li>Technician: <%= link_to service_technician.user.name, services_technician_path(service_technician.id) %></li>
-          <li>Service Price: <%=  humanized_money_with_symbol(service_technician.price) %></li>
-        </ul>
-      <% end %>
+        <% @services_technicians.each do |service_technician| %>
+          <ul>
+            <li>Technician: <%= link_to service_technician.user.name, services_technician_path(service_technician.id) %></li>
+            <li>Service Price: <%=  humanized_money_with_symbol(service_technician.price) %></li>
+          </ul>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

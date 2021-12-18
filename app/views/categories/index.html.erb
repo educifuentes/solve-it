@@ -5,20 +5,17 @@
       <h3>Not sure? Search all tech solutions</h3>
       <div class="d-flex mt-1" id="search-bar">
         <div class="flex-grow-1">
-          <%= form_tag root_path, method: :get do %>
-            <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          id: "search",
-          placeholder: "I need help with..."
-        %>
-          </div>
-          <div class="flex-item">
-            <%= submit_tag "Search",  class: "btn btn-primary"  %>
-          </div>
-        <% end %>
+          <form class= "form-inline my-2 my-Ig-0" action="/categories/autocomplete">
+              <input class="form-control mr-sm-2" name="query" type="text" placeholder="I need help with..." aria-label= "Search" >
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Search </button>
+          </form>
       </div>
+      </div>
+      <ul id="results" class="list-group mr-sm-2"></ul>
+
     </div>
+
+
     <div class="col">
       <% @categories.each do |category| %>
         <%= link_to category_path(category.id) do %>

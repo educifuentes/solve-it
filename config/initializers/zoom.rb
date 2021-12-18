@@ -3,10 +3,8 @@ require 'json'
 # require_relative "/.env"
 
 Zoom.configure do |c|
-  c.api_key = "8uF__74nTTGxwCWddWwtgA"
-  c.api_secret = "2U7DjjI9LrtrfnXt7UUOlddOWzq4676AeJWA"
-  # c.api_key = ENV["ZOOM_US_API_KEY"]
-  # c.api_secret = ENV["ZOOM_US_API_SECRET"]
+  c.api_key = ENV["ZOOM_US_API_KEY"]
+  c.api_secret = ENV["ZOOM_US_API_SECRET"]
 end
 
 # For Testing

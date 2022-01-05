@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :services, only: %i[index show]
 
   resources :orders, only: %i[index show new create] do
+    member do
+      get :start_meeting
+    end
     resources :reviews, only: %i[new create]
     resources :payments, only: %i[new]
   end

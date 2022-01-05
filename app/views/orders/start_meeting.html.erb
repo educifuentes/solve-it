@@ -1,0 +1,11 @@
+
+<div class="payment-container-show">
+    <h1>All set, <%= @order.user.name %> !</h1>
+
+  <h2>Service: <%= @order.services_technician.service.name %></h2>
+
+  <%= link_to @order.meeting_url, target: "_blank", class: "btn btn-large btn-primary" do%>
+    Join technician <%= @order.services_technician.user.name %> on videocall
+  <% end %>
+
+</div>

@@ -37,10 +37,7 @@
   const results = document.getElementById('results');
   const searchBar = document.getElementById("search-bar");
 
-  // const inputWord = event.currentTarget.value;
   const inputWord = document.querySelector('.form-control').value;
-  console.log("event");
-  console.log(event.currentTarget.value);
   const url = `/categories/autocomplete?query=${inputWord}`;
   fetch(url)
     .then(response => response.json())

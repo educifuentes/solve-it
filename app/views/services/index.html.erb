@@ -1,15 +1,19 @@
 <div class="service-container-index">
   <div class="services-container">
     <br>
-    <h2 id="category-name">Available Services</h2>
-    <div class="service">
-      <ul class="service-ul">
-      <% @services.each do |service| %>
-        <%= link_to service_path(service.id) do %>
-          <%= content_tag(:li, service.name.capitalize, class: ["my-3 pt-2", service.name.capitalize], id: ["service-name"]) %>
-        <% end %>
-      <% end %>
-      </ul>
+    <div class="headers">
+      <h2 id="category-name">Available Services</h2>
+      <div class="service">
+        <div>
+          <ul class="service-ul">
+            <% @services.each do |service| %>
+              <%= link_to service_path(service.id) do %>
+                <%= content_tag(:li, service.name.capitalize, class: ["my-3 pt-2", service.name.capitalize], id: ["service-name"]) %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

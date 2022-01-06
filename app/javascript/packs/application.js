@@ -30,9 +30,9 @@ import { showResults } from '../plugins/show_results'
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  const searchBar = document.getElementById("search-bar");
+  // const searchBar = document.getElementById("search-bar");
 
-  searchBar.addEventListener('keyup', showResults);
+  // searchBar.addEventListener('keyup', showResults);
 
   // Call your functions here, e.g:
   // initSelect2();

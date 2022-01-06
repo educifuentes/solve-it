@@ -8,12 +8,10 @@
 }
 
 #category-show-img {
-  background-image: linear-gradient(rgba(139, 101, 12, 0.7), transparent), url(background4.jpg);
-  background-size: cover;
+ background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
+  backdrop-filter: blur(50px);  background-size: cover;
   width: 100%;
   height: 300px;
-  margin-left: 0;
-  padding-bottom: 10px;
 }
 
 #service-name {
@@ -21,24 +19,17 @@
   background-color: rgb(255, 255, 255);
   padding: 3px 20px;
   list-style-type: none;
-  border-radius: 50px;
+  border-radius: 8px;
   border: 1px solid rgb(243, 243, 243);
   font-family: $navbar-a;
   font-weight: lighter;
   transition: transform 0.3s;
-  text-decoration: none;
-
-  &:hover {
-    transform: translateY(3px);
-    cursor: pointer;
-    text-decoration: none;
-  }
-}
-
-#service-name > a {
+  text-decoration: none !important;
   color: rgb(110, 110, 110);
-  text-decoration: none;
+
   &:hover {
+    transform: translateY(4px);
+    cursor: pointer;
     color: rgb(110, 110, 110);
     text-decoration: none;
   }
@@ -51,30 +42,24 @@
 .service-ul {
   margin-left: 0;
   padding-left: 0;
-   color: rgb(110, 110, 110);
+  color: rgb(110, 110, 110);
   text-decoration: none;
 }
 
 .services {
   padding: 30px 30px;
-  margin: 80px 220px;
+  margin-left: 200px;
+  margin-right: 200px;
   border-radius: 8px;
-  background-image: linear-gradient(rgba(139, 101, 12, 0.3), transparent), url(background4.jpg);
-  backdrop-filter: blur(50px);
-  backdrop-filter: brightness(90%);
-}
-
-.headers {
-  padding-right: 30px;
-  padding-left: 30px;
-  text-align: center;
-  padding-bottom: 80px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
+  margin-top: 75px;
 }
 
 #category-name {
   font-weight: bold;
   font-family: $poppins;
-  font-size: 80px;
-  padding-top: 80px;
+  font-size: 110px;
+  padding: 80px;
   text-transform: capitalize;
+  text-align: center;
 }

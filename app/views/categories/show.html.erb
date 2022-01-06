@@ -2,9 +2,10 @@
   <div id="category-show-img">
     <div class="headers">
       <h2 id="category-name"><%= @category.name %>s  </h2>
-      <h2>What problem are you having?</h2>
     </div>
     <div class="services">
+      <h2>What problem are you having?</h2>
+      <br>
       <% @category.services.each do |service| %>
         <ul class="service-ul">
           <%= link_to services_technicians_path(:service_id => service.id) do %>

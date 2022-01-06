@@ -49,13 +49,9 @@
   font-size: 18px;
   transition: 0.2s ease-in-out;
 }
-#logo {
-  color: $c-yellow;
-  font-size: 25px;
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-  }
+.logo {
+ width: 40px;
+ height: 40px;
 }
 
 #main-name {

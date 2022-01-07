@@ -4,7 +4,7 @@ class ServicesTechniciansController < ApplicationController
   end
 
   def new
-    @service = ServicesTechnician.new
+    @service_technician = ServicesTechnician.new
     @user = current_user
   end
 
@@ -13,7 +13,7 @@ class ServicesTechniciansController < ApplicationController
     @service_technician.user = current_user
 
     if @service_technician.save
-      redirect_to new_services_technician_path
+      redirect_to services_technician_path(@service_technician.id)
     else
       render :new
     end
@@ -26,6 +26,6 @@ class ServicesTechniciansController < ApplicationController
   private
 
   def services_technician_params
-    params.require(:services_technician).permit(:fee_amount, :service_id)
+    params.require(:services_technician).permit(:price, :service_id)
   end
 end

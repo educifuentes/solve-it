@@ -5,9 +5,12 @@
     <div class="service">
       <ul class="service-ul">
       <% @services.each do |service| %>
-        <%= link_to service_path(service.id) do %>
+        <%= link_to services_technicians_path(:service_id => service.id) do %>
           <%= content_tag(:li, service.name.capitalize, class: ["my-3 pt-2", service.name.capitalize], id: ["service-name"]) %>
         <% end %>
+      <% end %>
+      <% if current_user.role === "technician" %>
+        <%= link_to "New Service", new_services_technician_path  %>
       <% end %>
       </ul>
     </div>

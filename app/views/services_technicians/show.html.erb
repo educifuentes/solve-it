@@ -8,7 +8,9 @@
 
       <%= form_tag orders_path do %>
         <%= hidden_field_tag "service_technician_id", @service_technician.id %>
-        <%= submit_tag "Pay Service", class: "btn btn-primary" %>
+        <% if current_user.role === "customer" %>
+          <%= submit_tag "Pay Service", class: "btn btn-primary" %>
+        <% end %>
       <% end %>
     </div>
   </div>

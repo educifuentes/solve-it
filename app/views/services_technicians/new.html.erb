@@ -1,12 +1,8 @@
-<h4>Add a service</h4>
+<h4>Add a service you want to offer</h4>
 
-<%= simple_form_for @service do |f| %>
+<%= simple_form_for @service_technician do |f| %>
   <%= f.association :service, label_method: :label_text, include_blank: false, collection: Service.all.sort_by {|item| item.label_text}  %>
-  <%= f.input :fee_amount , placeholder: "Set your fee" %>
+  <%= f.association :user, selected: current_user.id, disabled: true %>
+  <%= f.input :price, input_html: {:autofocus => true}, as: :numeric %>
   <%= f.button :submit %>
-
-
 <% end %>
-
-
-<%# # Service.order(name: :asc) %>

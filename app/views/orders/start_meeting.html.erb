@@ -1,32 +1,25 @@
-
-<div class="payment-container-show">
+<div class="meeting-show">
+  <div class="headers-meeting">
     <h1>All set, <%= @order.user.name %> !</h1>
+    <%# <h2>A technician is waiting to help you with: <strong><%= @order.services_technician.service.name %>
+    <h2>Your technician is ready, join the meeting below:</h2>
+  </div>
+  <div class="meeting-background">
+    <div id="meet"></div>
+    <script src='https://meet.jit.si/external_api.js'></script>
+    <script>
+      const domain = 'meet.jit.si';
+      const options = {
+        roomName: 'solveItTestRoom',
+        width: 700,
+        height: 500,
+        parentNode: document.querySelector('#meet'),
+        userInfo: {
+          email: 'email@jitsiexamplemail.com',
+          displayName: 'John Doe'
+      }
+        };
 
-  <h2>Service: <%= @order.services_technician.service.name %></h2>
-
-  <%= link_to @order.meeting_url, target: "_blank", class: "btn btn-large btn-primary" do%>
-    Join technician <%= @order.services_technician.user.name %> on videocall
-  <% end %>
-
-  <div id="meet" style="width: 100%; height: 100%;"></div>
-
-
-</div>
-
-
-<script src='https://meet.jit.si/external_api.js'></script>
-<script>
-    const domain = 'meet.jit.si';
-    const options = {
-      roomName: 'solveItTestRoom',
-      width: 700,
-      height: 500,
-      parentNode: document.querySelector('#meet'),
-      userInfo: {
-        email: 'email@jitsiexamplemail.com',
-        displayName: 'John Doe'
-    }
-  };
-
-  const api = new JitsiMeetExternalAPI(domain, options);
-</script>
+        const api = new JitsiMeetExternalAPI(domain, options);
+    </script>
+  </div>

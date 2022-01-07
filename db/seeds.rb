@@ -35,7 +35,7 @@ Category.new(name: "smart-tv", icon: "fas fa-tv").save!
 
 # Services
 category = Category.find_by(name: "computer")
-service = Service.new(name: "Format Operating system - Mac", description: Faker::Lorem.sentence(word_count: 12))
+service = Service.new(name: "Format Operating system", description: Faker::Lorem.sentence(word_count: 12))
 service.category = category
 service.save!
 

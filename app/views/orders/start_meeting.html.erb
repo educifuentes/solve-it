@@ -16,17 +16,34 @@
 
 <script src='https://meet.jit.si/external_api.js'></script>
 <script>
+    const serviceName = "<%=  @order.services_technician.service.name %>";
+    const techName = "<%=  @order.services_technician.user.name %>";
+    const customerName = "<%=  @order.user.name %>";
+    const customerEmail = "<%=  @order.user.email %>";
+    const roomName = `${techName}SolutionRoom`;
+
     const domain = 'meet.jit.si';
     const options = {
-      roomName: 'solveItTestRoom',
+      roomName: roomName,
       width: 700,
       height: 500,
       parentNode: document.querySelector('#meet'),
       userInfo: {
-        email: 'email@jitsiexamplemail.com',
-        displayName: 'John Doe'
+        email: customerEmail,
+        displayName: customerName
     }
   };
 
   const api = new JitsiMeetExternalAPI(domain, options);
+
+
+  api.addListener('videoConferenceLeft', (data) => {
+
+    let result = window.confirm("Are you sure you want to end call?")
+
+    if (result) {
+      window.location.href = "<%= order_path(@order) %>";
+    }
+
+  });
 </script>

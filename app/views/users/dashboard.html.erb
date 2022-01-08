@@ -1,0 +1,18 @@
+<div class="technician-container-show">
+
+  <h1>Dashboard</h1>
+
+  <% if @user_services_technician.empty? %>
+    <p>You have not registered services yet. </p>
+  <% else %>
+    <h4>Your current services</h4>
+    <% @user_services_technician.each do |service_technician| %>
+      <%= link_to services_technician_path(:id => service_technician.id) do %>
+        <%= content_tag(:li, service_technician.service.name.capitalize, class: ["my-3 pt-2", service_technician.service.name.capitalize], id: ["service-name"]) %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= link_to "Add a new service", new_services_technician_path %>
+
+</div>

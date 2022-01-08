@@ -1,27 +1,36 @@
-<ul class="list-group">
-  <li class="list-group-item">Order:
-    <%= @order.services_technician.service.name %>
-  </li>
-  <li class="list-group-item">Technician:
-    <%= @order.services_technician.user.name %>
-  </li>
-  <li class="list-group-item">Customer:
-    <%= @order.user.name %>
-  </li>
-  <li class="list-group-item">Service price:
-    <%= humanized_money_with_symbol(@order.amount) %>
-  </li>
 
-  <% @order.reviews.each do |review| %>
-    <li class="list-group-item">Customer review:
-      <%= review.comment %>
+<div class="order-container-show">
+
+<h1>Order Summary</h1>
+
+<div class="d-flex justify-content-between">
+
+<div>
+  <ul class="order-list">
+    <li class="list-group-item bg-white"><strong><i class="fas fa-wrench"></i> Service</strong>:
+      <%= @order.services_technician.service.name %>
     </li>
-    <li class="list-group-item">Rating:
-      <%= review.rating %>
+    <li class="list-group-item bg-white"><strong><i class="fas fa-user-cog"></i>Technician</strong>:
+      <%= @order.services_technician.user.name %>
     </li>
-  <% end %>
+    <li class="list-group-item bg-white"><strong><i class="fas fa-tag"></i> Service price:</strong>
+      <%= humanized_money_with_symbol(@order.amount) %>
+    </li>
+
+    <% @order.reviews.each do |review| %>
+      <li class="list-group-item bg-transparent">Customer review:
+        <%= review.comment %>
+      </li>
+      <li class="list-group-item">Rating:
+        <%= review.rating %>
+      </li>
+    <% end %>
 </ul>
+</div>
+
+<div class="flex-grow-1">
+  <%= link_to "Leave a review", new_order_review_path(@order), class: "btn btn-primary btn-lg" %>
+  </div>
 
 
-
-<%= link_to "Leave a review", new_order_review_path(@order) %>
+</div>

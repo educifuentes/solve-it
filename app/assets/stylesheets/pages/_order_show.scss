@@ -1,0 +1,22 @@
+.order-container-show {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(121, 30, 30, 0.3), transparent), url(category-show-background.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 0 8%;
+}
+
+.order-list .fas {
+  color: rgb(112, 110, 110);
+  opacity: 0.8;
+  font-size: 1.2em;
+}
+
+.order-list ul{
+}
+
+.order-list li {
+  padding-left: 1em;
+}

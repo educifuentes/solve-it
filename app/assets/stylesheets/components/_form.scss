@@ -25,6 +25,7 @@
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
+  margin-top: 65px;
 }
 
 .form-layout {
@@ -88,4 +89,12 @@
   margin-right: 1em;
   max-width: 90%;
   text-align: center;
+}
+
+#sign-in-page-img{
+   background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
+  backdrop-filter: blur(50px);
+  background-size: cover;
+  width: 100%;
+  height: 300px;
 }

@@ -7,8 +7,12 @@
 }
 
 #content-wrap {
-  padding-bottom: 180px;    /* Footer height */
+  padding-bottom: 180px; /* Footer height */
   padding-top: 8vh;
- margin: 0;
 }
 
+a,
+a:hover,
+a:focus {
+  text-decoration: none !important;
+}

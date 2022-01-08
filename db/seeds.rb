@@ -28,24 +28,29 @@ User.new(email: "rosa@lewagon.com", name: "Rosa", role: "technician", password: 
 User.new(email: "camila@lewagon.com", name: "Camila", role: "technician", password: "123456").save
 
 # Main Categories
-Category.new(name: "laptop", icon: "fas fa-laptop").save!
+Category.new(name: "computer", icon: "fas fa-laptop").save!
 Category.new(name: "smartphone", icon: "fas fa-laptop").save!
 Category.new(name: "printer", icon: "fas fa-print").save!
 Category.new(name: "smart-tv", icon: "fas fa-tv").save!
 
 # Services
-category = Category.find_by(name: "laptop")
-service = Service.new(name: "Format Operating System - Mac", description: Faker::Lorem.sentence(word_count: 12))
+category = Category.find_by(name: "computer")
+service = Service.new(name: "Format Operating system", description: Faker::Lorem.sentence(word_count: 12))
 service.category = category
 service.save!
 
-category = Category.find_by(name: "laptop")
+category = Category.find_by(name: "computer")
 service = Service.new(name: "Unable to Connect to WiFi networks", description: Faker::Lorem.sentence(word_count: 12))
 service.category = category
 service.save!
 
-category = Category.find_by(name: "laptop")
+category = Category.find_by(name: "computer")
 service = Service.new(name: "Battery Doesn’t Charge", description: Faker::Lorem.sentence(word_count: 12))
+service.category = category
+service.save!
+
+category = Category.find_by(name: "computer")
+service = Service.new(name: "Screen not turning on", description: Faker::Lorem.sentence(word_count: 12))
 service.category = category
 service.save!
 

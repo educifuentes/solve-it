@@ -12,17 +12,32 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   </head>
   <body>
-    <div id="page-container">
-      <div id="content-wrap">
-        <div class="navbar-wrap">
-          <%= render 'shared/navbar' %>
+    <% unless current_page?(root_path) %>
+      <div id="page-container">
+        <div id="content-wrap">
+          <div class="navbar-wrap">
+            <%= render 'shared/navbar' %>
+          </div>
+          <%= render 'shared/flashes' %>
+          <%= yield %>
         </div>
-        <%= render 'shared/flashes' %>
-        <%= yield %>
+        <footer id="footer">
+          <%= render 'shared/footer' %>
+        </footer>
       </div>
-      <footer id="footer">
-        <%= render 'shared/footer' %>
-      </footer>
-    </div>
+    <% else %>
+      <div id="page-container">
+        <div id="content-wrap">
+          <div class="navbar-wrap">
+            <%= render 'shared/navbar' %>
+          </div>
+          <%= render 'shared/flashes' %>
+          <%= yield %>
+        </div>
+        <footer id="footer">
+          <%= render 'shared/footer' %>
+        </footer>
+      </div>
+    <% end %>
   </body>
 </html>

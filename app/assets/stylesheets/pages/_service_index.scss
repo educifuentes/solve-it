@@ -1,14 +1,26 @@
 .service-container-index {
   width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(rgba(121, 30, 30, 0.45), transparent), url(service-index-background.jpg);
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  padding: 0 8%;
-  &:hover {
-    transform: translateY(5px);
-    cursor: pointer;
-    text-decoration: none;
-  }
+   background-position: center;
+   background-size: cover;
+   position: relative;
+   margin: 0;
 }
+
+.service-ul-all {
+  margin-left: 0;
+  padding-left: 0;
+  color: rgb(110, 110, 110);
+  text-decoration: none;
+}
+
+.services-all{
+  padding: 15px 30px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-radius: 8px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+

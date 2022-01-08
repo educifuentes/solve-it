@@ -1,29 +1,36 @@
 <div class="order-container-show">
-<ul class="list-group">
-  <li class="list-group-item">Order:
-    <%= @order.services_technician.service.name %>
-  </li>
-  <li class="list-group-item">Technician:
-    <%= @order.services_technician.user.name %>
-  </li>
-  <li class="list-group-item">Customer:
-    <%= @order.user.name %>
-  </li>
-  <li class="list-group-item">Service price:
-    <%= humanized_money_with_symbol(@order.amount) %>
-  </li>
+  <div id="order-show-img">
+    <div class="header-order">
+      <h1>Thank you for using <i id="solve-it-order"> Solve It!</i></h1>
+    </div>
+  </div>
+  <div class="info-order">
+    <ul class="list-group-order">
+      <li class="list-group-item">Order:
+        <%= @order.services_technician.service.name %>
+      </li>
+      <li class="list-group-item">Technician:
+        <%= @order.services_technician.user.name %>
+      </li>
+      <li class="list-group-item">Customer:
+        <%= @order.user.name %>
+      </li>
+      <li class="list-group-item">Service price:
+        <%= humanized_money_with_symbol(@order.amount) %>
+      </li>
+      <% @order.reviews.each do |review| %>
+        <li class="list-group-item">Customer review:
+          <%= review.comment %>
+        </li>
+        <li class="list-group-item">Rating:
+          <%= review.rating %>
+        </li>
+      <% end %>
+    </ul>
 
-  <% @order.reviews.each do |review| %>
-    <li class="list-group-item">Customer review:
-      <%= review.comment %>
-    </li>
-    <li class="list-group-item">Rating:
-      <%= review.rating %>
-    </li>
-  <% end %>
-</ul>
+      <div class="si-btn-blue">
+        <%= link_to "Leave a review", new_order_review_path(@order) %>
+      </div>
 
-
-
-<%= link_to "Leave a review", new_order_review_path(@order) %>
+  </div>
 </div>

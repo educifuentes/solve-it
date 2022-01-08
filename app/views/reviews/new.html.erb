@@ -1,5 +1,14 @@
-<%= simple_form_for [@order, @review] do |f| %>
-  <%= f.input :rating, :collection => %w[1 2 3 4 5] %>
-  <%= f.input :comment %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="new-review">
+  <div id="new-review-img">
+    <div class="header-order">
+      <h1>Leave a review for <i id="technician-name"><%= @order.services_technician.user.name %></i></h1>
+    </div>
+  </div>
+  <div class="review-form">
+    <%= simple_form_for [@order, @review] do |f| %>
+      <%= f.input :rating, :collection => %w[1 2 3 4 5] %>
+      <%= f.input :comment %>
+      <%= f.submit "Submit review", class: "btn si-btn-yellow" %>
+    <% end %>
+  </div>
+</div>

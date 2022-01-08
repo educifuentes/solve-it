@@ -9,4 +9,5 @@ class User < ApplicationRecord
 
   validates :role, :name, presence: true
   validates :role, inclusion: { in: %w[customer technician] }
+  validates :email, uniqueness: true
 end

@@ -1,8 +1,8 @@
 <div class="meeting-show">
   <div class="headers-meeting">
-    <h1>All set, <%= @order.user.name %> !</h1>
+    <h1>All set, <%= @order.user.name %>!</h1>
     <h2>Your technician will help you with: <strong><%= @order.services_technician.service.name %> </strong> </h2>
-
+  </div>
     <div class="meeting-background">
       <div id="meet" style="width: 100%; height: 100%;"></div>
     </div>
@@ -16,7 +16,7 @@
 
       const domain = 'meet.jit.si';
       const options = {
-        
+
         roomName: roomName,
         width: 700,
         height: 500,

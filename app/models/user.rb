@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :services_technicians
   has_many :services, through: :services_technicians
+
+  validates :role, :name, presence: true
+  validates :role, inclusion: { in: %w[customer technician] }
 end

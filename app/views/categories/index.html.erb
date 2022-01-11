@@ -9,9 +9,11 @@
               <input id="index-search" class="form-control mr-sm-15" name="query" type="text" placeholder="I need help with..." aria-label= "Search" >
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Search </button>
           </form>
-      </div>
+        </div>
       </div>
       <ul id="results" class="list-group"></ul>
+
+
 
     </div>
 
@@ -44,7 +46,7 @@
       results.innerHTML = "";
       const services = data;
       services.forEach((item) => {
-        results.insertAdjacentHTML('beforeend', `<li class="list-group-item"> <a href="/services/${item.id}">${item.name}</a></li>`);
+        results.insertAdjacentHTML('beforeend', `<li class="list-group-item"> <a href="/services_technicians?service_id=${item.id}">${item.name}</a></li>`);
       });
     });
 

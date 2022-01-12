@@ -20,18 +20,18 @@
       <li class="list-group-item">Service price:
         <%= humanized_money_with_symbol(@order.amount) %>
       </li>
-      <% @order.reviews.each do |review| %>
+      <% if @order.review.present? %>
         <li class="list-group-item">Customer review:
-          <%= review.comment %>
+          <%= @order.review.comment %>
         </li>
         <li class="list-group-item">Rating:
-          <%= review.rating %>
+          <%= @order.review.rating %>
         </li>
       <% end %>
     </ul>
 
     <div class="d-flex justify-content-between">
-      <% if @order.reviews.count.zero? %>
+      <% if @order.review.nil? %>
         <%= link_to "Leave a review", new_order_review_path(@order), class: "btn-yellow mr-2" %>
       <% end %>
 

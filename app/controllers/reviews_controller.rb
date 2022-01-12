@@ -1,7 +1,11 @@
 class ReviewsController < ApplicationController
   def new
     @order = Order.find(params[:order_id])
-    @review = Review.new
+    if @order.review.present?
+      redirect_to order_path(@order)
+    else
+      @review = Review.new
+    end
   end
 
   def create

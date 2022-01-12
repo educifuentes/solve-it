@@ -72,9 +72,7 @@ p {
     cursor: pointer;
   }
 }
-#index-search{
-width: 400px ;
-}
+
 .computer {
   background-image: url(computer1.png);
 }
@@ -89,8 +87,12 @@ width: 400px ;
 }
 .card5 {
   background-image: url(a2.png);
+}
 
-
+.list-group-item > a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
 }
 
 // Smallest device

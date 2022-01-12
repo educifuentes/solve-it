@@ -7,28 +7,31 @@
 #new-review-img {
   background-position: top;
   width: 100%;
-  height: 300px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.355), transparent), url(test4.jpg);
+  height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.541), transparent), url(test5.jpg);
   backdrop-filter: blur(50px);
   background-size: cover;
+  background-position: 50% 70%;
 }
 
 .header-order {
   padding: 15px 8%;
   text-align: center;
   h1 {
-    font-size: 100px;
+    font-size: 75px;
+    padding-top: 80px;
   }
 }
 
-.review-form{
-    padding: 15px 30px;
+.review-form {
+  padding: 15px 30px;
   margin: 0 auto;
   border-radius: 8px;
-  background-image: linear-gradient(rgba(0, 77, 185, 0.587), transparent), url(background10.jpg);
+  background-image: linear-gradient(rgba(0, 77, 185, 0.637), transparent), url(background10.jpg);
+  background-position: 10% 8%;
   backdrop-filter: blur(50px);
   margin-top: 20px;
-  width: 50%;
+  width: 70%;
   font-size: 25px;
   font-family: $navbar-a;
   color: rgb(255, 255, 255);
@@ -36,6 +39,6 @@
   border-radius: 8px;
 }
 
-#technician-name{
+#technician-name {
   font-size: 120px;
 }

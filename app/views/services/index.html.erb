@@ -1,19 +1,25 @@
 <div class="service-container-index">
-  <div id="service-technician-index-img">
+  <div id="service-index-img">
     <div class="headers">
-      <h1 id="tech-title">Available Services</h1>
+      <h1 id="tech-title"> All Available Services</h1>
     </div>
   </div>
   <div class="services-all">
     <div>
       <ul class="service-ul-all">
         <h2 id="service-title">What problem are you having?</h2>
-        <br>
         <% @services.each do |service| %>
           <%= link_to services_technicians_path(:service_id => service.id) do %>
             <%= content_tag(:li, service.name.capitalize, class: ["my-3 pt-2", service.name.capitalize], id: ["service-name"]) %>
           <% end %>
         <% end %>
+        <%= link_to "Go Back", categories_path(anchor: "show"), class:"si-btn-blue" %>
+
+         <% if current_user.role === "technician" %>
+         <button class="si-btn-yellow">
+        <%= link_to "New Service", new_services_technician_path  %>
+        <button>
+      <% end %>
         <% if  user_signed_in? %>
           <% if current_user.role === "technician" %>
           <%= link_to "New Service", new_services_technician_path  %>

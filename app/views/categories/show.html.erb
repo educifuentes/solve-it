@@ -6,7 +6,6 @@
   </div>
   <div class="services">
     <h2>What problem are you having?</h2>
-    <br>
     <% @category.services.each do |service| %>
       <ul class="service-ul">
         <%= link_to services_technicians_path(:service_id => service.id) do %>
@@ -14,5 +13,6 @@
         <% end %>
       </ul>
     <% end %>
+    <%= link_to "Go Back", categories_path, class:"si-btn-blue" %>
   </div>
 </div>

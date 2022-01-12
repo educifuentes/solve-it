@@ -13,10 +13,10 @@
             <%= content_tag(:li, service.name.capitalize, class: ["my-3 pt-2", service.name.capitalize], id: ["service-name"]) %>
           <% end %>
         <% end %>
-        <%= link_to "Go Back", categories_path(anchor: "show"), class:"si-btn-blue" %>
+        <%= link_to "Go Back", categories_path(anchor: "show"), class:"btn-blue" %>
 
          <% if current_user.role === "technician" %>
-         <button class="si-btn-yellow">
+         <button class="btn-yellow">
         <%= link_to "New Service", new_services_technician_path  %>
         <button>
       <% end %>

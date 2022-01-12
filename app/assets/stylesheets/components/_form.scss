@@ -87,14 +87,15 @@
 }
 
 .form-inputs input {
-  margin-left: 1em;
-  margin-right: 1em;
-  max-width: 90%;
+  text-align: center;
+}
+
+.select-center {
   text-align: center;
 }
 
 #sign-in-page-img{
-   background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
   backdrop-filter: blur(50px);
   background-size: cover;
   width: 100%;

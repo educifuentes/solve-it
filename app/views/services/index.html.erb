@@ -20,6 +20,11 @@
         <%= link_to "New Service", new_services_technician_path  %>
         <button>
       <% end %>
+        <% if  user_signed_in? %>
+          <% if current_user.role === "technician" %>
+          <%= link_to "New Service", new_services_technician_path  %>
+          <% end %>
+        <% end%>
       </ul>
     </div>
   </div>

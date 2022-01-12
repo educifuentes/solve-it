@@ -23,6 +23,17 @@ class ServicesTechniciansController < ApplicationController
     @service_technician = ServicesTechnician.find(params[:id])
   end
 
+  def edit
+    @service_technician = ServicesTechnician.find(params[:id])
+  end
+
+  def update
+    @service_technician = ServicesTechnician.find(params[:id])
+    @service_technician.update(services_technician_params)
+
+    redirect_to services_technician_path(@service_technician)
+  end
+
   private
 
   def services_technician_params

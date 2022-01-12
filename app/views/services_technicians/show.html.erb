@@ -1,17 +1,31 @@
 <div class="technician-container-show">
-  <div class="text-left">
-    <div class="info-tech">
-      <h1 id="info-title">Service: <%= @service_technician.service.name %></h1>
+  <div id="service-technician-show-img">
+    <div class="headers">
+      <h1 id="tech-index-title">You're almost there...</h1>
+    </div>
+  </div>
+  <div class="info">
+    <h2>Confirm your order</h2>
+    <div class="info-background">
+      <p>Service: <%= @service_technician.service.name %></p>
       <p>Description: <%= @service_technician.service.description %></p>
       <p>Technician: <%= @service_technician.user.name %></p>
       <p>Service price: <%= humanized_money_with_symbol(@service_technician.price) %></p>
+    </div>
+    <br>
+    <div class="btn-flex">
+      <%= link_to "Go Back", categories_path(anchor: "show"), class:"si-btn-blue" %>
+<% if current_user.role === "customer" %>
+<%= link_to "Pay Service", "", class: "si-btn-yellow"  %>
+<% end %>
 
       <%= form_tag orders_path do %>
         <%= hidden_field_tag "service_technician_id", @service_technician.id %>
         <% if current_user.role === "customer" %>
-          <%= submit_tag "Pay Service", class: "btn btn-primary" %>
+          <%= submit_tag "Pay Service" , class:"si-btn-yellow"%>
         <% end %>
       <% end %>
+
     </div>
   </div>
 </div>

@@ -5,16 +5,14 @@
         <% if @services_technicians.first.present? %>
           <h1 id="tech-title">Choose a Technician</h1>
         <% else %>
-          <h1>No Technicians available for this service yet
-          </h1>
-          <%= link_to "Back", request.referer.present? ? request.referer : default_path %>
+          <h1 id="sorry-message">Sorry... No Available
+            Technicians</h1>
         <% end %>
       </div>
     </div>
   </div>
   <div class="info">
     <h2 id="service-title">Available Technicians</h2>
-    <br>
     <% @services_technicians.each do |service_technician| %>
       <ul>
         <%= link_to  services_technician_path(service_technician.id) do%>
@@ -23,5 +21,6 @@
         <% end %>
       </ul>
     <% end %>
+    <%= link_to "Go Back", category_path(@services_technicians.last.service.category.id), class:"si-btn-blue" %>
   </div>
 </div>

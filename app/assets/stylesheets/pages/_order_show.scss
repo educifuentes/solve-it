@@ -7,34 +7,40 @@
 #order-show-img {
   background-position: top;
   width: 100%;
-  height: 300px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.272), transparent), url(background10.jpg);
+  height: 400px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.404), transparent), url(landing4.jpg);
   backdrop-filter: blur(50px);
   background-size: cover;
+  background-position: center;
 }
 
 .header-order {
-  padding: 15px 8%;
   text-align: center;
-  h1 {
-    font-size: 100px;
-  }
+}
+#order-title {
+  font-size: 80px;
+  padding-top: 80px;
 }
 
 .info-order {
   padding: 15px 30px;
   margin: 0 auto;
   border-radius: 8px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
-
-  background-position: 15% 25%;
+  background-image: linear-gradient(rgba(0, 77, 185, 0.637), transparent), url(background10.jpg);
+  background-position: 10% 8%;
   backdrop-filter: blur(50px);
   margin-top: 20px;
-  width: 50%;
+  width: 65%;
   font-size: 25px;
   font-family: $navbar-a;
   color: rgb(110, 110, 110);
   font-weight: bold;
+}
+
+.avatar {
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 700px;
 }
 
 .list-group-order {
@@ -43,6 +49,28 @@
   border-radius: 8px;
 }
 
-#solve-it-order {
-  font-size: 120px;
+#review-btn {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
+  font-size: 25px;
+  backdrop-filter: blur(500px);
+  text-decoration: none;
+  padding: 10px 20px;
+  width: 300px;
+  border-radius: 8px;
+  background-position: 50% 54%;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  color: white;
+  margin-left: 680px;
+  &:hover {
+    transition: 0.2s ease-in-out;
+    transform: translateY(-5px);
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }

@@ -9,13 +9,13 @@
 }
 
 #service-technician-index-img {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.219), transparent), url(test5.jpg);
-  backdrop-filter: blur(50px);  background-size: cover;
-  background-position: 50% 80%;
-
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url(landing2.jpg);
+  backdrop-filter: blur(50px);
+  background-size: cover;
+  background-position: 50% 30%;
   background-size: cover;
   width: 100%;
-  height: 300px;
+  height: 400px;
 }
 
 .info {
@@ -60,6 +60,7 @@
   padding-right: 30px;
   padding-left: 30px;
   text-align: center;
+  padding-top: 20px;
 }
 
 #tech-title {

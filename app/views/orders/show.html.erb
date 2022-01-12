@@ -1,7 +1,7 @@
 <div class="order-container-show">
   <div id="order-show-img">
     <div class="header-order">
-      <h1>Thank you for using <i id="solve-it-order"> Solve It!</i></h1>
+      <h1 id="order-title">Thank you for choosing us!</h1>
     </div>
   </div>
   <div class="info-order">
@@ -11,6 +11,8 @@
       </li>
       <li class="list-group-item">Technician:
         <%= @order.services_technician.user.name %>
+        <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+
       </li>
       <li class="list-group-item">Customer:
         <%= @order.user.name %>
@@ -27,10 +29,10 @@
         </li>
       <% end %>
     </ul>
+    <div id="review-btn">
+      <%= link_to "Leave a review", new_order_review_path(@order) %>
+    </div>
 
-      <div class="si-btn-blue">
-        <%= link_to "Leave a review", new_order_review_path(@order) %>
-      </div>
 
   </div>
 </div>

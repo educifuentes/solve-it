@@ -14,9 +14,11 @@
             <%= content_tag(:li, service.name.capitalize, class: ["my-3 pt-2", service.name.capitalize], id: ["service-name"]) %>
           <% end %>
         <% end %>
-         <% if current_user.role === "technician" %>
-        <%= link_to "New Service", new_services_technician_path  %>
-      <% end %>
+        <% if  user_signed_in? %>
+          <% if current_user.role === "technician" %>
+          <%= link_to "New Service", new_services_technician_path  %>
+          <% end %>
+        <% end%>
       </ul>
     </div>
   </div>

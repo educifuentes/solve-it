@@ -1,4 +1,4 @@
-.si-btn-blue {
+.btn-blue {
   background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
   font-size: 25px;
   backdrop-filter: blur(500px);
@@ -23,7 +23,8 @@
   }
 }
 
-.si-btn-yellow {
+
+.btn-yellow {
   background-image: linear-gradient(rgba(0, 0, 0, 0), transparent), url(background4.jpg);
   font-size: 25px;
   backdrop-filter: blur(500px);
@@ -47,5 +48,3 @@
     color: white;
   }
 }
-
-

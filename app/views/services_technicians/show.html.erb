@@ -12,6 +12,10 @@
           <%= submit_tag "Pay Service", class: "btn btn-primary" %>
         <% end %>
       <% end %>
+
+      <% if current_user.present? && current_user.role === "technician" %>
+        <%= link_to "Edit Service", edit_services_technician_path(@service_technician.id) %>
+      <% end %>
     </div>
   </div>
 </div>

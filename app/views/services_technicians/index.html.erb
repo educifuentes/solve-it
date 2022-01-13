@@ -11,16 +11,22 @@
       </div>
     </div>
   </div>
-  <div class="info">
-    <h2 id="service-title">Available Technicians</h2>
-    <% @services_technicians.each do |service_technician| %>
-      <ul>
-        <%= link_to  services_technician_path(service_technician.id) do%>
-          <li>Technician:  <%= service_technician.user.name%> </li>
-          <li>Service Price: <%=  humanized_money_with_symbol(service_technician.price) %></li>
-        <% end %>
-      </ul>
-    <% end %>
-    <%= link_to "Go Back", category_path(@services_technicians.last.service.category.id), class:"btn-blue" %>
-  </div>
+  <% if @services_technicians.present?  %>
+    <div class="info">
+      <h2 id="service-title">Available Technicians</h2>
+      <% @services_technicians.each do |service_technician| %>
+        <ul>
+          <%= link_to  services_technician_path(service_technician.id) do%>
+            <li>Technician:  <%= service_technician.user.name%> </li>
+            <li>Service Price: <%=  humanized_money_with_symbol(service_technician.price) %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <%= link_to "Go Back", category_path(@services_technicians.last.service.category.id), class:"btn-blue" %>
+    </div>
+  <% else %>
+    <div class="d-flex justify-content-center">
+      <%= link_to "Go Back", categories_path, class:"btn-blue mt-3" %>
+    </div>
+  <% end %>
 </div>

@@ -1,0 +1,42 @@
+.dashboard-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.692), transparent), url(test11.jpg);
+  backdrop-filter: blur(50px);
+  background-size: cover;
+  background-position: 50% 70%;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+}
+
+.dashboard-show{
+  height: 100vh;
+}
+
+#dashboard-title {
+   font-weight: bold;
+  font-family: $poppins;
+  font-size: 110px;
+  padding: 80px;
+}
+
+#dashboard-service {
+  font-size: 25px;
+  background-color: rgb(255, 255, 255);
+  padding: 3px 20px;
+  list-style-type: none;
+  border-radius: 8px;
+  border: 1px solid rgb(243, 243, 243);
+  font-family: $navbar-a;
+  font-weight: lighter;
+  transition: transform 0.3s;
+  text-decoration: none !important;
+  color: rgb(110, 110, 110);
+  width: 600px;
+
+  &:hover {
+    transform: translateY(4px);
+    cursor: pointer;
+    color: rgb(110, 110, 110);
+    text-decoration: none;
+  }
+}

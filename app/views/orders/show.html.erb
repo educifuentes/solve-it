@@ -33,6 +33,11 @@
       <%= link_to "Leave a review", new_order_review_path(@order) %>
     </div>
 
+    <div class="d-flex justify-content-between">
+      <%= link_to "Leave a review", new_order_review_path(@order), class: "btn-yellow mr-2" %>
+
+      <%= link_to "Back to Home", root_path, class: "btn-blue"  %>
+    </div>
 
   </div>
 </div>

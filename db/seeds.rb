@@ -84,7 +84,7 @@ service9 = Service.new(name: "Fix Smart-TV Sound Output", description: "Fix your
 service9.category = category_smart_tv
 service9.save!
 
-service_demo = Service.new(name: "Download files from a Phone to a Laptop", description: "Download or backup any file from your phone to your laptop" )
+service_demo = Service.new(name: "Transfer files from a Phone to a Laptop", description: "Transfer or backup any file from your phone to your laptop" )
 service_demo.category = category_smartphone
 service_demo.save!
 

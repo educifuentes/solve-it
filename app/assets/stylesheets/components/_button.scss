@@ -36,6 +36,7 @@
   transition: 0.3s ease-in-out;
   text-align: center;
   color: white;
+  border: 0 !important;
   &:hover {
     transition: 0.2s ease-in-out;
     transform: translateY(-5px);

@@ -31,12 +31,7 @@
 
 
         api.addListener('videoConferenceLeft', (data) => {
-
-      let result = window.confirm("Are you sure you want to end call?")
-
-      if (result) {
-        window.location.href = "<%= order_path(@order) %>";
-      }
+          window.location.href = "<%= order_path(@order) %>";
 
         });
     </script>

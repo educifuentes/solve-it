@@ -19,18 +19,20 @@
     </div>
     <br>
     <div class="btn-flex">
-      <%= link_to "Go Back", categories_path(anchor: "show"), class:"btn-blue" %>
+      <% if current_user.present? && current_user.role === "technician" %>
+        <%= link_to "Go Back", "/dashboard", class:"btn-blue" %>
+      <% else %>
+        <%= link_to "Go Back", categories_path(anchor: "show"), class:"btn-blue" %>
+      <% end %>
       <% if current_user.role === "customer" %>
         <%= link_to "Pay Service", "", class: "btn-yellow"  %>
       <% end %>
-
       <%= form_tag orders_path do %>
         <%= hidden_field_tag "service_technician_id", @service_technician.id %>
         <% if current_user.role === "customer" %>
           <%= submit_tag "Pay Service" , class:"btn-yellow"%>
         <% end %>
       <% end %>
-
     </div>
   </div>
 </div>

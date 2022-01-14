@@ -1,8 +1,15 @@
-<h4>Add a service you want to offer</h4>
-
-<%= simple_form_for @service_technician do |f| %>
-  <%= f.association :service, label_method: :label_text, include_blank: false, collection: Service.all.sort_by {|item| item.label_text}  %>
-  <%= f.association :user, selected: current_user.id, disabled: true %>
-  <%= f.input :price, input_html: {:autofocus => true}, as: :numeric %>
-  <%= f.button :submit %>
-<% end %>
+<div class="dashboard-show">
+  <div class="dashboard-img">
+    <h1 id="dashboard-title">Add a service you want to offer</h1>
+    <div class="info-dashboard">
+      <h2>
+        <%= simple_form_for @service_technician do |f| %>
+          <%= f.association :service, label_method: :label_text, include_blank: false, collection: Service.all.sort_by {|item| item.label_text}  %>
+          <%= f.association :user, selected: current_user.id, disabled: true %>
+          <%= f.input :price, input_html: {:autofocus => true}, as: :numeric %>
+          <%= f.button :submit %>
+        <% end %>
+      </h2>
+    </div>
+  </div>
+</div>
